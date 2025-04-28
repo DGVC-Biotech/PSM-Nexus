@@ -315,71 +315,22 @@ section {
 }
 
 .logo-wrapper {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 2rem;
     position: relative;
-    animation: floatLogo 6s ease-in-out infinite;
-    overflow: hidden;
-}
-
-.logo-wrapper::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(100, 255, 218, 0.1),
-        rgba(100, 255, 218, 0.3),
-        rgba(100, 255, 218, 0.1),
-        transparent
-    );
-    transform: rotate(45deg);
-    animation: shine 3s infinite;
-}
-
-.logo-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 15px rgba(100, 255, 218, 0.3));
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    animation: float3D 5s ease-in-out infinite;
 }
 
 .company-title {
     font-size: 3.5rem;
-    font-weight: 800;
-    background: linear-gradient(120deg, #64ffda, #00bcd4, #64ffda);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1.5rem;
-    animation: gradientShift 3s linear infinite;
+    color: #64ffda;
+    margin: 2rem 0;
+    text-align: center;
     position: relative;
-    overflow: hidden;
-}
-
-.company-title::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(100, 255, 218, 0.1),
-        rgba(100, 255, 218, 0.3),
-        rgba(100, 255, 218, 0.1),
-        transparent
-    );
-    transform: rotate(45deg);
-    animation: shine 3s infinite;
-    z-index: -1;
+    transform-style: preserve-3d;
+    animation: titlePulse 4s ease-in-out infinite;
 }
 
 .company-description {
@@ -649,15 +600,16 @@ section {
     to { --angle: 360deg; }
 }
 
-@keyframes shine {
-    0% {
-        transform: rotate(45deg) translateY(-100%);
+@keyframes titlePulse {
+    0%, 100% {
+        transform: scale(1) translateZ(0);
+        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
     }
     50% {
-        transform: rotate(45deg) translateY(100%);
-    }
-    100% {
-        transform: rotate(45deg) translateY(100%);
+        transform: scale(1.05) translateZ(30px);
+        text-shadow: 
+            0 0 20px rgba(100, 255, 218, 0.7),
+            0 0 40px rgba(100, 255, 218, 0.3);
     }
 }
 
