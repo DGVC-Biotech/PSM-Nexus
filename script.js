@@ -166,27 +166,56 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
 });
 
-// Hamburger Menu Functionality
-const initHamburgerMenu = () => {
+// Mobile Menu Functionality
+const initMobileMenu = () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    
+    const links = document.querySelectorAll('.nav-links li');
+
+    // Toggle menu
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+        // Toggle Nav
         navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+
+        // Animate Links
+        links.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `slideIn 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
     });
 
     // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    links.forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            
+            // Reset animations
+            links.forEach(link => {
+                link.style.animation = '';
+            });
         });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            
+            // Reset animations
+            links.forEach(link => {
+                link.style.animation = '';
+            });
+        }
     });
 };
 
-// Add to your DOMContentLoaded event listener
+// Initialize mobile menu when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // ... existing code ...
     initHamburgerMenu();
 });
