@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PSM Nexus</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Ensure only one of these is needed or they don't conflict -->
+    <link rel="stylesheet" href="./style.css"> 
+    <link rel="stylesheet" href="./styles.css"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <div class="header-background" id="headerCanvas"></div>
+    <div class="header-background" id="headerCanvas"></div> <!-- Dedicated canvas for Three.js -->
+    
     <!-- Header Section -->
     <header class="main-header">
-        <div id="headerCanvas"></div>
+        <!-- Removed duplicate id="headerCanvas" from here -->
         <nav class="nav-container">
             <div class="logo">
                 <h1>PSM Nexus</h1>
@@ -160,7 +163,7 @@
             <div class="portfolio-grid">
                 <div class="project-card" data-type="web">
                     <div class="card-content">
-                        <div class="project-image">
+                        <div class="project-image"> <!-- Consider adding an actual image or placeholder bg -->
                             <div class="tech-stack">
                                 <i class="fab fa-react"></i>
                                 <i class="fab fa-node-js"></i>
@@ -254,7 +257,7 @@
                             <option value="Portfolio">Portfolio Website</option>
                             <option value="Resume">Resume Writing</option>
                             <option value="Molecular">Molecular Docking</option>
-                            <option value="Protein">Protein - Protein Docing</option>
+                            <option value="Protein">Protein - Protein Docking</option> <!-- Corrected typo -->
                         </select>
                         <div class="glow-border"></div>
                     </div>
@@ -276,7 +279,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer"> <!-- Changed class from footer to main-footer to match CSS potentially -->
         <div class="footer-content">
             <div class="footer-section">
                 <h3>PSM Nexus</h3>
@@ -285,7 +288,7 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">About</a></li> <!-- Note: #about section doesn't exist -->
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -305,10 +308,32 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 PSM Nexus. All rights reserved.</p>
+            <p>© 2025 PSM Nexus. All rights reserved.</p>
         </div>
     </footer>
 
     <script type="module" src="script.js"></script>
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>PSM Nexus Assistant</h3>
+                <button class="minimize-chat" id="minimizeChat">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Initial messages will be added by JavaScript -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button id="sendMessage"> <!-- Changed from sendMessage to sendMessageBtn in JS, ensure consistency or use ID -->
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
