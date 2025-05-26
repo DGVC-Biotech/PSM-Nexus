@@ -1,0 +1,1421 @@
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label,
+.form-group input:valid ~ label,
+.form-group textarea:valid ~ label {
+    top: -0.8rem;
+    left: 1rem;
+    font-size: 0.9rem;
+    color: #64ffda;
+}
+
+// ... existing code ...
+/* Improve select dropdown visibility */
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(10, 25, 47, 0.8); /* Darker background for better contrast */
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    appearance: none;
+    cursor: pointer;
+}
+
+.form-group select option {
+    background-color: #0a192f; /* Dark background for options */
+    color: white; /* White text for better visibility */
+    padding: 10px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
+
+/* Style for the quote form select specifically */
+.quote-form select {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(10, 25, 47, 0.8); /* Darker background */
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    appearance: none;
+    cursor: pointer;
+}
+
+.quote-form select option {
+    background-color: #0a192f;
+    color: white;
+    padding: 10px;
+}
+
+
+.submit-btn {
+    background: linear-gradient(45deg, rgba(100, 255, 218, 0.8), rgba(0, 188, 212, 0.8));
+    color: #0a192f;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(100, 255, 218, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(45deg, rgba(0, 188, 212, 0.9), rgba(100, 255, 218, 0.9));
+    border-color: rgba(100, 255, 218, 0.6);
+    letter-spacing: 3px;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Remove all old button styles */
+.send-button,
+.send-button span,
+.send-button .button-glow,
+.send-button:hover,
+.send-button:hover .button-glow,
+.send-button:active,
+.send-button .button-glow,
+.submit-btn::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 4rem 1rem;
+    }
+    
+    .contact-form {
+        padding: 2rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+    }
+    
+    .submit-btn {
+        padding: 1.2rem 2rem;
+    }
+}
+
+/* Enhanced Services Section Styles */
+.services-section {
+    margin-top: 70px; /* Add margin to account for fixed header */
+    padding-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: transparent; /* Ensure transparency */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
+    border-color: rgba(100, 255, 218, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-header {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(10, 25, 47, 0.5);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon i {
+    font-size: 1.8rem;
+    color: #64ffda;
+}
+
+.service-header h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.service-details {
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.02);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.service-card:hover .service-details {
+    padding: 2rem;
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.service-details h4 {
+    color: #64ffda;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.service-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-details ul {
+    transform: translateY(0);
+}
+
+.service-details li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.service-details li i {
+    color: #64ffda;
+    font-size: 0.9rem;
+}
+
+.price {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 4rem 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-details {
+        transition: all 0.3s ease;
+    }
+
+    .service-card:hover .service-details {
+        max-height: 600px;
+        padding: 1.5rem;
+    }
+}
+
+/* Header Styles */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 0.5rem 1rem; /* Reduced padding */
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    height: 60px; /* Reduced from 80px to 60px */
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #64ffda;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #64ffda;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #64ffda;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.contact-btn {
+    background: transparent;
+    border: 1px solid #64ffda;
+    color: #64ffda;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 2rem;
+}
+
+.contact-btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+}
+
+/* This section is no longer needed as we've adjusted each section individually */
+
+@media (max-width: 768px) {
+    .main-header {
+        height: 50px; /* Further reduced for mobile */
+        padding: 0.3rem 0.8rem;
+    }
+
+    .services-section {
+        margin-top: 60px;
+        padding-top: 1rem;
+    }
+    
+    .portfolio-section,
+    .contact-section {
+        margin-top: 2rem;
+        padding: 2rem 1rem;
+    }
+    
+    .company-info {
+        margin-top: 50px;
+        padding: 3rem 1rem 2rem;
+    }
+    
+    .header-content {
+        padding: 4rem 0 1rem;
+    }
+
+    .nav-container {
+        height: 50px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .contact-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        margin-left: 0;
+    }
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
+    border-color: rgba(100, 255, 218, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-header {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(10, 25, 47, 0.5);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon i {
+    font-size: 1.8rem;
+    color: #64ffda;
+}
+
+.service-header h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.service-details {
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.02);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.service-card:hover .service-details {
+    padding: 2rem;
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.service-details h4 {
+    color: #64ffda;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.service-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-details ul {
+    transform: translateY(0);
+}
+
+.service-details li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.service-details li i {
+    color: #64ffda;
+    font-size: 0.9rem;
+}
+
+.price {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 4rem 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-details {
+        transition: all 0.3s ease;
+    }
+
+    .service-card:hover .service-details {
+        max-height: 600px;
+        padding: 1.5rem;
+    }
+}
+
+/* Footer Styles */
+.main-footer {
+    background: rgba(10, 25, 47, 0.9);
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    color: #64ffda;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #64ffda;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #64ffda;
+    color: #0a192f;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Form Styles */
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea ~ label {
+    top: 1rem;
+    transform: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
+
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label,
+.form-group select:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    color: #64ffda;
+    background: rgba(10, 25, 47, 0.8);
+    padding: 0 0.5rem;
+}
+
+.glow-border {
+    position: absolute;
+    inset: -1px;
+    border-radius: 6px;
+    pointer-events: none;
+    background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.form-group:focus-within .glow-border {
+    opacity: 1;
+}
+
+.quote-section {
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.quote-form select {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    appearance: none;
+    cursor: pointer;
+}
+
+.quote-form,
+.contact-form {
+    // ... existing code ...
+}
+
+.header-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(45deg, #0a192f, #112240);
+    overflow: hidden;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 0.5rem 1rem; /* Reduced padding */
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    height: 60px; /* Reduced from 80px to 60px */
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    text-align: center;
+    padding: 6rem 0 2rem; /* Increased top padding to push content down */
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.company-name {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+    background: linear-gradient(120deg, #64ffda, #00bcd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+    transform: translateZ(50px);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    transform: translateZ(50px);
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.slider-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    transform-style: preserve-3d;
+}
+
+.slide-content {
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slide.active .slide-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #64ffda;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.slide p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 2;
+}
+
+.prev-slide,
+.next-slide {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.prev-slide:hover,
+.next-slide:hover {
+    color: #64ffda;
+}
+
+.slide-dots {
+    display: flex;
+    gap: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background: #64ffda;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 60vh;
+    }
+
+    .slide h2 {
+        font-size: 2rem;
+    }
+
+    .slide p {
+        font-size: 1rem;
+    }
+
+    .slider-controls {
+        bottom: 1rem;
+        gap: 1rem;
+    }
+}
+
+.main-nav {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    background: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    margin: 1rem 0;
+    animation: slideDown 0.5s ease forwards;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #64ffda;
+}
+
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: transparent; /* Changed from rgba(10, 25, 47, 0.3) */
+    backdrop-filter: none; /* Removed blur effect */
+}
+
+.services-section {
+    margin-top: 70px; /* Add margin to account for fixed header */
+    padding-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: transparent; /* Ensure transparency */
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
+}
+
+/* Enhanced Chat Widget Styles */
+.chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.chat-toggle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #64ffda, #00bcd4);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #0a192f;
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-toggle:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+}
+
+.chat-toggle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    top: -100%;
+    left: -100%;
+    transition: all 0.6s;
+}
+
+.chat-toggle:hover::before {
+    top: 100%;
+    left: 100%;
+}
+
+.chat-container {
+    position: absolute;
+    bottom: 85px;
+    right: 0;
+    width: 380px;
+    height: 550px;
+    background: rgba(10, 25, 47, 0.95);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    overflow: hidden;
+    transform-origin: bottom right;
+    animation: chatAppear 0.3s ease forwards;
+}
+
+@keyframes chatAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.chat-container.active {
+    display: flex;
+}
+
+.chat-header {
+    padding: 20px;
+    background: linear-gradient(to right, rgba(100, 255, 218, 0.1), rgba(0, 188, 212, 0.1));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.chat-header h3 {
+    color: #64ffda;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.minimize-chat {
+    background: transparent;
+    border: none;
+    color: #64ffda;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minimize-chat:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: scale(1.1);
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 255, 218, 0.2) transparent;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 255, 218, 0.2);
+    border-radius: 3px;
+}
+
+/* Add to your existing styles.css or style.css */
+
+/* ... other styles ... */
+
+.chat-messages .suggested-questions {
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.chat-messages .question-category h4 {
+    color: #64ffda;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.chat-messages .questions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chat-messages .suggested-question {
+    background: rgba(100, 255, 218, 0.1);
+    color: #bbe1fa; /* Light blue text, adjust as needed */
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chat-messages .suggested-question:hover {
+    background: rgba(100, 255, 218, 0.2);
+    border-color: #64ffda;
+    color: #ffffff;
+}
+
+/* Ensure message content can display HTML lists correctly */
+.message .message-content ul {
+    list-style: none; /* Assuming FontAwesome icons are used for bullets */
+    padding-left: 5px; /* Adjust if not using icons */
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.message .message-content li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+.message .message-content li .fa-check { /* Style for checkmark icons */
+    color: #64ffda;
+    margin-right: 8px;
+    font-size: 0.8em;
+}
+
+.message .message-content b { /* Style for bold text */
+    color: #64ffda; /* Or your preferred highlight color */
+    font-weight: 600;
+}
+
+/* Typing indicator styles (already provided in your styles.css, ensure they are active) */
+.typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 12px 16px; /* Match message padding */
+    /* background: rgba(255, 255, 255, 0.1); Already part of .message.bot */
+    border-radius: 15px; /* Match message radius */
+    width: fit-content;
+    align-self: flex-start; /* As it's a bot message */
+    animation: messageAppear 0.3s ease forwards; /* If you have this animation */
+}
+
+.typing-indicator .message-content { /* Ensure message-content div within typing indicator doesn't break layout */
+    display: flex; /* To align spans horizontally */
+    align-items: center;
+    gap: 5px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #64ffda;
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: 0s; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* Responsive adjustments for chat if needed */
+@media (max-width: 480px) {
+    .chat-container {
+        width: 95vw;
+        height: 70vh;
+        bottom: 10px; /* Adjust positioning */
+        right: 2.5vw;
+    }
+    .chat-toggle {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+}
+
+.message {
+    max-width: 85%;
+    padding: 15px 20px;
+    border-radius: 20px;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+    position: relative;
+    margin-bottom: 8px;
+    animation: messageAppear 0.3s ease forwards;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.15), rgba(0, 188, 212, 0.15));
+    border-radius: 20px 20px 0 20px;
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.message.bot {
+    align-self: flex-start;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.2), rgba(0, 188, 212, 0.2));
+    border-radius: 20px 20px 20px 0;
+    color: #ffffff;
+}
+
+.message-content {
+    position: relative;
+    z-index: 1;
+}
+
+.message-content br {
+    margin-bottom: 8px;
+    display: block;
+    content: "";
+}
+
+.message-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.message-content li {
+    margin: 5px 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+.message-content li:before {
+    content: '•';
+    color: #64ffda;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.message-content code {
+    background: rgba(100, 255, 218, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9em;
+}
+
+.message-content a {
+    color: #64ffda;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(100, 255, 218, 0.4);
+    transition: all 0.3s ease;
+}
+
+.message-content a:hover {
+    border-bottom-style: solid;
+    border-bottom-color: #64ffda;
+}
+
+.chat-input {
+    padding: 20px;
+    background: linear-gradient(to right, rgba(100, 255, 218, 0.1), rgba(0, 188, 212, 0.1));
+    display: flex;
+    gap: 12px;
+    border-top: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 25px;
+    background: rgba(10, 25, 47, 0.9);
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.chat-input input:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+#sendMessage {
+    background: linear-gradient(135deg, #64ffda, #00bcd4);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #0a192f;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 10px rgba(100, 255, 218, 0.2);
+}
+
+#sendMessage:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    width: fit-content;
+    align-self: flex-start;
+    animation: messageAppear 0.3s ease forwards;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #64ffda;
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: 0s; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
